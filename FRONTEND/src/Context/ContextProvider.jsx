@@ -6,7 +6,7 @@ import axios from "axios";
 export const MyContext = createContext();
 
 const ContextProvider = ({ children }) => {
-  const url = "http://localhost:5000";
+  const url = "https://finalproject-1-s0az.onrender.com";
   const navigate = useNavigate();
 
   const [currentIndex, setCurrentIndex] = useState(0);
