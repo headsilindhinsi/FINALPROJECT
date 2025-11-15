@@ -12,7 +12,7 @@ const Decor= () => {
     const [ products , setProducts ] = useState([])
   
     useEffect(() => {
-       fetch("http://localhost:5000/product/products?category=Decor")
+       fetch("https://finalproject-1-s0az.onrender.com/product/products?category=Decor")
    
          .then(res => res.json())
          .then(data => setProducts(data))

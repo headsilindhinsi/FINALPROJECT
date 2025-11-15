@@ -9,7 +9,7 @@ const BedRoom = () => {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/product/products?category=BedRoom")
+    fetch("https://finalproject-1-s0az.onrender.com/products?category=BedRoom")
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err));
