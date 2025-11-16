@@ -10,7 +10,7 @@ export default defineConfig(({ command }) => {
       server: {
         host: "0.0.0.0",
         port: 5000,
-        allowedHosts: ["finalproject-6-dwx9.onrender.com"]
+        allowedHosts: ["finalproject-7-4xqc.onrender.com"]
       }
     }
   }
