@@ -162,7 +162,7 @@ const ContextProvider = ( {children }) => {
 
  useEffect(() => {
   FetchUserData()
- })
+ }, [])
 
   var contextValue = {
     category , setCategory,
