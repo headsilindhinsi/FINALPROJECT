@@ -6,7 +6,7 @@ import axios from "axios";
 export const MyContext = createContext()
 const ContextProvider = ( {children }) => {
   
-  var url = "https://finalproject-1-s0az.onrender.com"
+  var url = "https://finalproject-4-9ubl.onrender.com"
 
   var [ category , setCategory ] = useState("")
   var [ type , setType ] = useState("")

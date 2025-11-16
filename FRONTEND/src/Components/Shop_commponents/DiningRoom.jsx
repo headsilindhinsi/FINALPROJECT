@@ -9,7 +9,7 @@ const DiningRoom = () => {
 
 
   useEffect(() => {
-    fetch("https://finalproject-1-s0az.onrender.com/products?category=DiningRoom")
+    fetch("https://finalproject-4-9ubl.onrender.com/products?category=DiningRoom")
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err));
