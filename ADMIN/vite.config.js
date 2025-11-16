@@ -15,8 +15,4 @@ export default defineConfig(({ command }) => {
     }
   }
 
-  // ✔ Production build (Render uses this)
-  return {
-    plugins: [react()]
-  }
 })
