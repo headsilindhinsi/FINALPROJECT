@@ -11,7 +11,7 @@ const Team = () => {
           <div className="col-12 col-md-3 text-center mb-4">
             <img src={Group_images1.img} className="side-img"/>
 
-            <h3 className="couple-name mt-4">Conssultation Team</h3>
+            <h3 className="couple-name mt-4">Consultation Team</h3>
 
            
           </div>
@@ -19,7 +19,7 @@ const Team = () => {
           {/*  CENTER COLUMN — static */}
           <div className="col-12 col-md-6 text-center mb-4">
             <img src={Group_images2.img} alt="Couple" className="center-img" />
-            <h3>space Planning Team</h3>
+            <h3>Space Planning Team</h3>
           </div>
 
           {/*  RIGHT COLUMN — static */}

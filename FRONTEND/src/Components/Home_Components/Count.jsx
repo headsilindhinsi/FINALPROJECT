@@ -47,16 +47,6 @@ const CountdownSection = () => {
           ].map((item, i) => (
             <div key={i} className="col-6 col-md-3 mb-4">
               <div className="countdown-box position-relative mx-auto">
-                {/* <img
-                  src={BlueFlowerLeft}
-                  alt="flower left"
-                  className="flower flower-left"
-                />
-                <img
-                  src={BlueFlowerRight}
-                  alt="flower right"
-                  className="flower flower-right"
-                /> */}
                 <h3 className="time">{item.value}</h3>
                 <p className="label">{item.label}</p>
               </div>

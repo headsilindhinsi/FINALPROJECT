@@ -16,9 +16,7 @@ const Product = () => {
     <div className='container'>
       <div className='row'>
         <div className='col'>
-
-       
-        <form onSubmit={ProductSubmitFun}>
+           <form onSubmit={ProductSubmitFun}>
             <input type='file' id='Image' hidden onChange={ImageFun}/>
             <label htmlFor='Image'>
                 <img src={ previewImg ? previewImg : my_asset.upload} height={200} width={200}/>
