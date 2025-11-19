@@ -30,7 +30,7 @@ const User = () => {
                                 return(
                                     <tr key={index}>
                                         <td>{value.firstName}</td>
-                                        <td>{value.lastName}</td>
+                                        
                                         <td>{value.email}</td>
                                         <td>{value.password}</td>
                                         <td><span className='fs-4 text-danger' onClick={() => RemoveUser(value._id)}>&times;</span></td>
