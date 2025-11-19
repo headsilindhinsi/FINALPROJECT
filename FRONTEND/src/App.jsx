@@ -23,7 +23,7 @@ const App = () => {
      <ContextProvider>
       <Routes>
         <Route path= "/" element={<Register/>}/>
-        <Route path='/Login' element={<Protect><Login /></Protect>} />
+        <Route path='/Login' element={<Login />} />
         <Route path= "/Home" element={<Home/>}/>
         <Route path= "/Products" element={<Protect><Products/></Protect>}/>
         <Route path= "/LivingRoom" element={<Protect><LivingRoom/></Protect>}/>
