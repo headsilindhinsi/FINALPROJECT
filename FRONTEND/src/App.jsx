@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter , Routes , Route} from "react-router-dom"
 import ContextProvider from './Context/ContextProvider'
-// import Register from './Pages/Register'
-// import Login from './Pages/Login'
+import Register from './Pages/Register'
+import Login from './Pages/Login'
 import Home from './Pages/Home'
 import BedRoom from './Components/Shop_commponents/BedRoom'
 import LivingRoom from './Components/Shop_commponents/LivingRoom'
@@ -22,8 +22,8 @@ const App = () => {
      <BrowserRouter>
      <ContextProvider>
       <Routes>
-        {/* <Route path= "/" element={<Register/>}/>
-        <Route path='/Login' element={<Login />} /> */}
+        <Route path= "/" element={<Register/>}/>
+        <Route path='/Login' element={<Login />} />
         <Route path= "/Home" element={<Home/>}/>
         <Route path= "/Products" element={<Protect><Products/></Protect>}/>
         <Route path= "/LivingRoom" element={<Protect><LivingRoom/></Protect>}/>
