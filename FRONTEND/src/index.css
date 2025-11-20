@@ -1002,7 +1002,7 @@ section.bg-light .rounded-circle {
 
 @media (max-width: 480px) {
   .testimonial-image {
-    width: 120px;
+    width: 180px;
     height: 120px;
   }
 
