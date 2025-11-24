@@ -987,7 +987,7 @@ section.bg-light .rounded-circle {
 
   .testimonial-image {
     width: 140px;
-    height: 140px;
+    height: 180px;
   }
 
   .testimonial-text {
@@ -1003,7 +1003,7 @@ section.bg-light .rounded-circle {
 @media (max-width: 480px) {
   .testimonial-image {
     width: 180px;
-    height: 120px;
+    height: 200px;
   }
 
   .testimonial-names {
