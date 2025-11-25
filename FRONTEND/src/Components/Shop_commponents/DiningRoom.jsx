@@ -1,9 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState , useEffect} from 'react';
 import Navbar from '../Common_components/Navbar';
 import Footer from '../Common_components/Footer';
 import { MyContext } from '../../Context/ContextProvider';
 
-const DiningRoom = () => {
+
+const LivingRoom = () => {
   const { addToCart, addToWishlist } = useContext(MyContext);
   const [products, setProducts] = useState([]);
 
@@ -18,42 +19,39 @@ const DiningRoom = () => {
     <>
       <Navbar />
 
-      {/* HERO BANNER */}
       <div className="container-fluid my-5 py-5">
         <div className="banner-wrapper d-flex flex-column justify-content-center align-items-center my-5">
           <h2 className="banner-title">Shop</h2>
-          <p className="banner-subtitle">Dining Room</p>
+          <p className="banner-subtitle">Dinning Room</p>
         </div>
       </div>
 
       <div className="container shop-container">
         <div className="row">
-
-          {/* PRODUCT GRID */}
           <div className="row">
             {products.map((value, index) => (
               <div className="col-lg-3 col-md-6 mb-5 text-center" key={index}>
-
-                <div className="product-card position-relative">
+                <div className="product-card">
                   <img src={value.img} className="product-img" alt={value.Name} />
 
                   <div className="product-overlay">
-                    <button
-                      className="add-cart-btn"
-                      onClick={() => addToCart({ ...value, id: value._id })}
-                    >
-                      ADD TO CART
-                    </button>
+                   <button
+  className="add-cart-btn"
+  onClick={() => addToCart({ ...value, id: value._id })}
+>
+  ADD TO CART
+</button>
 
-                    <button
-                      className="add-cart-btn ms-2"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        addToWishlist({ ...value, id: value._id });
-                      }}
-                    >
-                      <i className="bi bi-suit-heart"></i>
-                    </button>
+<button
+  className="add-cart-btn ms-2"
+  onClick={(e) => { 
+    e.stopPropagation(); 
+    addToWishlist({ ...value, id: value._id }); 
+  }}
+>
+  <i className="bi bi-suit-heart"></i>
+</button>
+
                   </div>
                 </div>
 
@@ -63,11 +61,9 @@ const DiningRoom = () => {
                 <p className="p-price">
                   <span className="new-price">${value.price}</span>
                 </p>
-
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
@@ -76,4 +72,5 @@ const DiningRoom = () => {
   );
 };
 
-export default DiningRoom;
+
+export default LivingRoom;
