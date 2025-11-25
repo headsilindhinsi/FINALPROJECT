@@ -184,7 +184,7 @@ return (
 
           <li className="nav-item dropdown" style={{   borderBottom: "1px solid #f2f2f2",   padding: "10px 0", }}>
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{   color: "#000",   textDecoration: "none",   fontSize: "16px",   display: "block",   letterSpacing: "0.5px", }}>  Shop</a>
-            <ul className="dropdown-menu show" style={{   border: "none",   boxShadow: "none",   backgroundColor: "#fff",   marginTop: "5px",   marginLeft: "10px", }}>
+            <ul className="dropdown-menu" style={{   border: "none",   boxShadow: "none",   backgroundColor: "#fff",   marginTop: "5px",   marginLeft: "10px", }}>
               <li>
                 <Link className="dropdown-item" to="/Products" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>  Shop Home</Link>
               </li>

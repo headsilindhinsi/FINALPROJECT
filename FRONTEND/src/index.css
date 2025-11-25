@@ -845,6 +845,19 @@ section.bg-light .rounded-circle {
 }
 
 
+/* Fix dropdown inside offcanvas */
+.offcanvas .dropdown-menu {
+  position: static !important;
+  float: none !important;
+  transform: none !important;
+  display: none;
+}
+
+.offcanvas .dropdown-menu.show {
+  display: block;
+}
+
+
   .events-section {
   
   color: #4e3b3b;
