@@ -9,7 +9,7 @@ const LivingRoom = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-   fetch("https://finalproject-4-9ubl.onrender.com/product/products?category=diningRoom")
+   fetch("https://finalproject-4-9ubl.onrender.com/product/products?category=DiningRoom")
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err));
