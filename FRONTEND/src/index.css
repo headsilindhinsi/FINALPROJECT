@@ -454,18 +454,6 @@ transition: opacity 0.3s ease;
   }
   }
 
-  @media (min-width: 992px) {
-  .nav-item:hover .dropdown-menu {
-    display: block;
-  }
-}
-
-/* Disable hover on mobile */
-@media (max-width: 991px) {
-  .nav-item:hover .dropdown-menu {
-    display: none !important;
-  }
-}
 .text-pink{
   color: gray
 }
