@@ -22,7 +22,7 @@ const LivingRoom = () => {
       <div className="container-fluid my-5 py-5">
         <div className="banner-wrapper d-flex flex-column justify-content-center align-items-center my-5">
           <h2 className="banner-title">Shop</h2>
-          <p className="banner-subtitle">Living Room</p>
+          <p className="banner-subtitle">Bed Room</p>
         </div>
       </div>
 
