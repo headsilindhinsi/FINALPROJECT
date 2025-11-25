@@ -1,7 +1,6 @@
 import React, { useContext, useState , useEffect} from 'react';
 import Navbar from '../Common_components/Navbar';
 import Footer from '../Common_components/Footer';
-import {  Back } from '../../assets/assets';
 import { MyContext } from '../../Context/ContextProvider';
 
 

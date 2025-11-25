@@ -1,15 +1,15 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState , useEffect} from 'react';
 import Navbar from '../Common_components/Navbar';
 import Footer from '../Common_components/Footer';
 import { MyContext } from '../../Context/ContextProvider';
 
-const BedRoom = () => {
+
+const LivingRoom = () => {
   const { addToCart, addToWishlist } = useContext(MyContext);
   const [products, setProducts] = useState([]);
 
-
   useEffect(() => {
-    fetch("https://finalproject-4-9ubl.onrender.com/products?category=BedRoom")
+    fetch("https://finalproject-4-9ubl.onrender.com/product/products?category=BedRoom")
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.log(err));
@@ -19,56 +19,58 @@ const BedRoom = () => {
     <>
       <Navbar />
 
-      {/* HERO BANNER */}
-     <div className="container-fluid my-5 py-5">
+      <div className="container-fluid my-5 py-5">
         <div className="banner-wrapper d-flex flex-column justify-content-center align-items-center my-5">
           <h2 className="banner-title">Shop</h2>
-          <p className="banner-subtitle">BedRoom</p>
+          <p className="banner-subtitle">Living Room</p>
         </div>
       </div>
 
       <div className="container shop-container">
         <div className="row">
+          <div className="row">
+            {products.map((value, index) => (
+              <div className="col-lg-3 col-md-6 mb-5 text-center" key={index}>
+                <div className="product-card">
+                  <img src={value.img} className="product-img" alt={value.Name} />
 
-          {/* RIGHT PRODUCT GRID */}
-        
+                  <div className="product-overlay">
+                   <button
+  className="add-cart-btn"
+  onClick={() => addToCart({ ...value, id: value._id })}
+>
+  ADD TO CART
+</button>
 
-            {/* Product Grid */}
-            <div className="row">
-              {products.map((value, index) => (
-                <div className="col-lg-3 col-md-6 mb-5 text-center" key={index}>
+<button
+  className="add-cart-btn ms-2"
+  onClick={(e) => { 
+    e.stopPropagation(); 
+    addToWishlist({ ...value, id: value._id }); 
+  }}
+>
+  <i className="bi bi-suit-heart"></i>
+</button>
 
-                  <div className="product-card position-relative">
-                    <img src={value.img} className="product-img" alt={value.Name} />
-
-                    <div className="product-overlay">
-                     <button className="add-cart-btn" onClick={() => addToCart({ ...value, id: value._id })} >ADD TO CAR</button>
-
-                      <button className="add-cart-btn ms-2" onClick={(e) => {    e.stopPropagation();    addToWishlist({ ...value, id: value._id });  }} >
-                        <i className="bi bi-suit-heart"></i>
-                      </button>
-
-                    </div>
                   </div>
-
-                  <h5 className="p-name mt-3">{value.type}</h5>
-                  <h5 className="p-name mt-3">{value.desc}</h5>
-
-                  <p className="p-price">
-                    <span className="new-price">${value.price}</span>
-                  </p>
-
                 </div>
-              ))}
-            </div>
 
+                <h5 className="p-name mt-3">{value.type}</h5>
+                <h5 className="p-name mt-3">{value.desc}</h5>
+
+                <p className="p-price">
+                  <span className="new-price">${value.price}</span>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      
+      </div>
 
       <Footer />
     </>
   );
 };
 
-export default BedRoom;
+
+export default LivingRoom;
