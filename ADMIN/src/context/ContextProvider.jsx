@@ -71,6 +71,11 @@ const ContextProvider = ( {children }) => {
   }
  }
 
+  useEffect(() => {
+    FetchProductData()
+  } , [])
+
+
  const RemoveProduct = async (id) => {
   try{
     if(confirm("Are you sure want to delete this product?")){
