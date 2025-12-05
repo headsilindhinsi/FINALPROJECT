@@ -250,21 +250,35 @@ return (
       `}</style>
    
      {/* ---------------- SEARCH OFFCANVAS (PREMIUM FULLSCREEN) ---------------- */}
-<div className="offcanvas offcanvas-top premium-search" tabIndex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" data-bs-scroll="true">
-  <div className="premium-search-container">
+<div
+  className="offcanvas offcanvas-top premium-search"
+  tabIndex="-1"
+  id="offcanvasTop"
+  aria-labelledby="offcanvasTopLabel"
+  data-bs-scroll="true"
+>
+  <div className="offcanvas-body premium-search-container">
 
-    {/* Close Button */}
-    <button type="button" className="premium-close-btn" data-bs-dismiss="offcanvas" aria-label="Close" >
+    <button
+      type="button"
+      className="premium-close-btn"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
       ✕
     </button>
 
-    {/* Title */}
     <h1 className="premium-search-title">Search</h1>
 
-    {/* Search Input */}
-    <input className="premium-search-input" placeholder="Search products, rooms, décor..." onChange={(e) => {   setInput(e.target.value);   SearchFun(e.target.value); }}/>
+    <input
+      className="premium-search-input"
+      placeholder="Search products, rooms, décor..."
+      onChange={(e) => {
+        setInput(e.target.value);
+        SearchFun(e.target.value);
+      }}
+    />
 
-    {/* Scrollable Results */}
     <div className="premium-search-results">
       <div className="container mt-5">
         <div className="row">
@@ -275,9 +289,18 @@ return (
             </div>
           ) : (
             filteredData.map((value, index) => (
-              <div className="col-lg-3 col-md-6 col-12 my-3" key={index} onClick={() => navigate(`/Dynamic/${value.id}`)} style={{ cursor: "pointer" }} >
+              <div
+                className="col-lg-3 col-md-6 col-12 my-3"
+                key={index}
+                onClick={() => navigate(`/Dynamic/${value.id}`)}
+                style={{ cursor: "pointer" }}
+              >
                 <div className="premium-result-card">
-                  <img src={value.img} alt={value.Name} className="premium-result-img"/>
+                  <img 
+                    src={value.img}
+                    alt={value.Name}
+                    className="premium-result-img"
+                  />
                   <div className="premium-result-content">
                     <p className="premium-result-type">{value.type}</p>
                     <h5 className="premium-result-name">{value.Name}</h5>
@@ -294,6 +317,7 @@ return (
 
   </div>
 </div>
+
 
 
 
