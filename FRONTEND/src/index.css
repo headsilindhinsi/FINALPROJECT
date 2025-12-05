@@ -210,6 +210,14 @@ transition: opacity 0.3s ease;
 
 /* ✅ PREMIUM FULLSCREEN SEARCH */
 /* MAIN CONTAINER — FIXED SCROLL ISSUE */
+.offcanvas-body {
+  overflow-y: auto !important;
+}
+
+.premium-search-container {
+  height: 100vh;
+  overflow-y: auto;
+}
 .premium-search-container {
   padding: 40px;
   position: relative;
@@ -219,14 +227,7 @@ transition: opacity 0.3s ease;
   padding-bottom: 120px;      /* avoid cutting last card */
 }
 
-.offcanvas-body {
-  overflow-y: auto !important;
-}
 
-.premium-search-container {
-  height: 100vh;
-  overflow-y: auto;
-}
 
 
 /* CLOSE BUTTON */
