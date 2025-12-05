@@ -251,72 +251,73 @@ return (
    
      {/* ---------------- SEARCH OFFCANVAS (PREMIUM FULLSCREEN) ---------------- */}
 <div
-  className="offcanvas offcanvas-top premium-search"
+  className="offcanvas offcanvas-top"
   tabIndex="-1"
   id="offcanvasTop"
-  aria-labelledby="offcanvasTopLabel"
   data-bs-scroll="true"
 >
-  <div className="offcanvas-body premium-search-container">
+  <div className="offcanvas-body">
 
     <button
-      type="button"
       className="premium-close-btn"
       data-bs-dismiss="offcanvas"
-      aria-label="Close"
     >
       ✕
     </button>
 
-    <h1 className="premium-search-title">Search</h1>
+    <div className="premium-search-container">
 
-    <input
-      className="premium-search-input"
-      placeholder="Search products, rooms, décor..."
-      onChange={(e) => {
-        setInput(e.target.value);
-        SearchFun(e.target.value);
-      }}
-    />
+      <h1 className="premium-search-title">Search</h1>
 
-    <div className="premium-search-results">
-      <div className="container mt-5">
-        <div className="row">
+      <input
+        className="premium-search-input"
+        placeholder="Search products, rooms, décor..."
+        onChange={(e) => {
+          setInput(e.target.value);
+          SearchFun(e.target.value);
+        }}
+      />
 
-          {filteredData.length === 0 ? (
-            <div className="col-12 text-center mt-5">
-              <p className="text-muted">No matching results found.</p>
-            </div>
-          ) : (
-            filteredData.map((value, index) => (
-              <div
-                className="col-lg-3 col-md-6 col-12 my-3"
-                key={index}
-                onClick={() => navigate(`/Dynamic/${value.id}`)}
-                style={{ cursor: "pointer" }}
-              >
-                <div className="premium-result-card">
-                  <img 
-                    src={value.img}
-                    alt={value.Name}
-                    className="premium-result-img"
-                  />
-                  <div className="premium-result-content">
-                    <p className="premium-result-type">{value.type}</p>
-                    <h5 className="premium-result-name">{value.Name}</h5>
-                    <p className="premium-result-price">₹{value.price}</p>
+      <div className="premium-search-results">
+        <div className="container">
+          <div className="row">
+
+            {filteredData.length === 0 ? (
+              <div className="col-12 text-center mt-5">
+                <p className="text-muted">No matching results found.</p>
+              </div>
+            ) : (
+              filteredData.map((value, index) => (
+                <div
+                  className="col-lg-3 col-md-6 col-12 my-3"
+                  key={index}
+                  onClick={() => navigate(`/Dynamic/${value.id}`)}
+                  style={{ cursor: "pointer" }}
+                >
+                  <div className="premium-result-card">
+                    <img
+                      src={value.img}
+                      alt={value.Name}
+                      className="premium-result-img"
+                    />
+                    <div className="premium-result-content">
+                      <p className="premium-result-type">{value.type}</p>
+                      <h5 className="premium-result-name">{value.Name}</h5>
+                      <p className="premium-result-price">₹{value.price}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))
-          )}
+              ))
+            )}
 
+          </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </div>
+
 
 
 
