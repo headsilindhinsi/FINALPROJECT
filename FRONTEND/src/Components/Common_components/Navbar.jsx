@@ -278,45 +278,46 @@ return (
         }}
       />
 
-      <div className="premium-search-results">
-        <div className="container">
-          <div className="row">
-
-            {filteredData.length === 0 ? (
-              <div className="col-12 text-center mt-5">
-                <p className="text-muted">No matching results found.</p>
-              </div>
-            ) : (
-              filteredData.map((value, index) => (
-                <div
-                  className="col-lg-3 col-md-6 col-12 my-3"
-                  key={index}
-                  onClick={() => navigate(`/Dynamic/${value.id}`)}
-                  style={{ cursor: "pointer" }}
-                >
-                  <div className="premium-result-card">
-                    <img
-                      src={value.img}
-                      alt={value.Name}
-                      className="premium-result-img"
-                    />
-                    <div className="premium-result-content">
-                      <p className="premium-result-type">{value.type}</p>
-                      <h5 className="premium-result-name">{value.Name}</h5>
-                      <p className="premium-result-price">₹{value.price}</p>
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
-
-          </div>
-        </div>
-      </div>
-
     </div>
+
+    {/* FULL-WIDTH RESULTS (fixed) */}
+    <div className="premium-search-results">
+      <div className="row gx-4 gy-4">
+
+        {filteredData.length === 0 ? (
+          <div className="col-12 text-center mt-5">
+            <p className="text-muted">No matching results found.</p>
+          </div>
+        ) : (
+          filteredData.map((value, index) => (
+            <div
+              className="col-lg-3 col-md-6 col-12"
+              key={index}
+              onClick={() => navigate(`/Dynamic/${value.id}`)}
+              style={{ cursor: "pointer" }}
+            >
+              <div className="premium-result-card">
+                <img
+                  src={value.img}
+                  alt={value.Name}
+                  className="premium-result-img"
+                />
+                <div className="premium-result-content">
+                  <p className="premium-result-type">{value.type}</p>
+                  <h5 className="premium-result-name">{value.Name}</h5>
+                  <p className="premium-result-price">₹{value.price}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        )}
+
+      </div>
+    </div>
+
   </div>
 </div>
+
 
 
 

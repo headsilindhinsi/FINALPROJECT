@@ -216,20 +216,20 @@ transition: opacity 0.3s ease;
   width: 100% !important;
   left: 0 !important;
   right: 0 !important;
-  background: #f8f2e9 !important;      /* soft premium background */
+  background: #f8f2e9 !important;
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
 }
 
-/* Make content scroll */
+/* Scroll content */
 .offcanvas-body {
   height: 100%;
   overflow-y: auto;
   padding: 40px;
 }
 
-/* Center Content */
+/* Center header + search bar only */
 .premium-search-container {
   max-width: 1400px;
   margin: auto;
@@ -247,7 +247,7 @@ transition: opacity 0.3s ease;
   color: #3a3227;
   cursor: pointer;
   z-index: 1000;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 .premium-close-btn:hover {
   transform: scale(1.15);
@@ -282,18 +282,19 @@ transition: opacity 0.3s ease;
   box-shadow: 0 12px 40px rgba(180,150,90,0.25);
 }
 
-/* Results Container */
+/* Results Section */
 .premium-search-results {
   margin-top: 60px;
+  width: 100%;
 }
 
-/* Product Card */
+/* Cards */
 .premium-result-card {
   background: #fff;
   border-radius: 14px;
   overflow: hidden;
-  transition: .3s ease;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   height: 100%;
 }
 .premium-result-card:hover {
@@ -301,14 +302,12 @@ transition: opacity 0.3s ease;
   box-shadow: 0 16px 40px rgba(0,0,0,0.15);
 }
 
-/* Product Image */
 .premium-result-img {
   width: 100%;
   height: 210px;
   object-fit: cover;
 }
 
-/* Card Content */
 .premium-result-content {
   padding: 14px 18px;
   text-align: left;
@@ -329,7 +328,6 @@ transition: opacity 0.3s ease;
   color: #bfa76f;
   margin-top: 4px;
 }
-
 
 .grid-item {
   position: relative;
