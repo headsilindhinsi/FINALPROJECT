@@ -209,37 +209,17 @@ transition: opacity 0.3s ease;
 
 
 /* ✅ PREMIUM FULLSCREEN SEARCH */
-.premium-search {
-  height: 100vh !important;
-  max-height: 100vh !important;
-  width: 100vw !important;
-  background: rgba(255, 255, 255, 0.4) !important;
-  backdrop-filter: blur(15px) saturate(150%);
-  -webkit-backdrop-filter: blur(15px) saturate(150%);
-  padding: 0 !important;
-  z-index: 9999 !important;   /* ✅ Ensures above NAVBAR + CAROUSEL */
-  animation: fadeSlideDown 0.4s ease forwards;
-}
-
-@keyframes fadeSlideDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-/* ✅ CONTAINER */
+/* MAIN CONTAINER — FIXED SCROLL ISSUE */
 .premium-search-container {
   padding: 40px;
   position: relative;
   text-align: center;
+  height: 100vh;              /* FULL HEIGHT */
+  overflow-y: auto;           /* ENABLE SCROLL */
+  padding-bottom: 120px;      /* avoid cutting last card */
 }
 
-/* ✅ CLOSE BUTTON */
+/* CLOSE BUTTON */
 .premium-close-btn {
   position: absolute;
   right: 40px;
@@ -257,7 +237,7 @@ transition: opacity 0.3s ease;
   transform: scale(1.1);
 }
 
-/* ✅ TITLE */
+/* TITLE */
 .premium-search-title {
   font-family: 'Playfair Display', serif;
   font-size: 50px;
@@ -268,7 +248,7 @@ transition: opacity 0.3s ease;
   letter-spacing: 1px;
 }
 
-/* ✅ INPUT */
+/* INPUT */
 .premium-search-input {
   width: 70%;
   max-width: 850px;
@@ -287,7 +267,12 @@ transition: opacity 0.3s ease;
   box-shadow: 0 6px 30px rgba(191, 167, 111, 0.2);
 }
 
-/* ✅ SEARCH RESULT CARDS */
+/* RESULTS */
+.premium-search-results {
+  margin-top: 50px;
+}
+
+/* RESULT CARD */
 .premium-result-card {
   background: white;
   border-radius: 12px;
@@ -331,6 +316,7 @@ transition: opacity 0.3s ease;
   font-weight: bold;
   color: #bfa76f;
 }
+
 .grid-item {
   position: relative;
   width: 100%;
