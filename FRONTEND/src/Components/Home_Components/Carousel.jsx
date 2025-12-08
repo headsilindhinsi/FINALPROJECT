@@ -10,8 +10,10 @@ const Carousel = () => {
   return (
     <section id="home" className="carousel-container">
 
+      {/* Navbar */}
       <Navbar />
 
+      {/* Background Slides */}
       {slide.map((item, i) => (
         <motion.div
           key={i}
@@ -20,19 +22,27 @@ const Carousel = () => {
           animate={i === currentIndex ? "visible" : "hidden"}
           variants={parallax(scrollY * 0.3)}
           style={{ backgroundImage: `url(${item.bg})` }}
-        >
-        </motion.div>
+        ></motion.div>
       ))}
 
-      {/* ⭐ STATIC TEXT OVERLAY (NOT FROM MAP) */}
-      <div className="carousel-static-text">
-        <h1>Welcome to AllForHome</h1>
-        <p>Your one-stop destination for premium home interiors</p>
-        <button className="carousel-main-btn">Shop Now</button>
+      {/* ⭐ Elegant Static Text */}
+      <div className="carousel-static-text elegant-text">
+        <h1>
+          Welcome to <span>AllForHome</span>
+        </h1>
+        <p>Discover timeless elegance crafted for your dream home</p>
+
+        <button className="carousel-main-btn elegant-btn">Shop Now</button>
       </div>
 
-      <button className="carousel-btn left" onClick={prevSlide}>&#10094;</button>
-      <button className="carousel-btn right" onClick={nextSlide}>&#10095;</button>
+      {/* Navigation Arrows */}
+      <button className="carousel-btn left" onClick={prevSlide}>
+        &#10094;
+      </button>
+
+      <button className="carousel-btn right" onClick={nextSlide}>
+        &#10095;
+      </button>
     </section>
   );
 };
