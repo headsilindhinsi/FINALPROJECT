@@ -55,28 +55,29 @@ body, html {
 .carousel-btn.right { right: 20px; }
 
 
-.carousel-text {
+.carousel-static-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  z-index: 10;
+  color: #fff;
 }
 
-.carousel-title {
+.carousel-static-text h1 {
   font-size: 3rem;
   font-weight: 700;
   text-shadow: 0 4px 10px rgba(0,0,0,0.7);
 }
 
-.carousel-subtitle {
+.carousel-static-text p {
   font-size: 1.3rem;
   margin-top: 10px;
   text-shadow: 0 3px 6px rgba(0,0,0,0.6);
 }
 
-.carousel-btn-main {
+.carousel-main-btn {
   margin-top: 20px;
   background: #ffffff;
   color: #000;
@@ -87,7 +88,7 @@ body, html {
   transition: 0.3s;
 }
 
-.carousel-btn-main:hover {
+.carousel-main-btn:hover {
   background: #000;
   color: #fff;
 }

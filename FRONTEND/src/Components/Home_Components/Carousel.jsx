@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { MyContext } from "../../Context/ContextProvider";
 import Navbar from "../Common_components/Navbar";
 import { motion } from "framer-motion";
-import { slowUp, parallax } from "../../motion/Motion";
+import { parallax } from "../../motion/Motion";
 
 const Carousel = () => {
   const { slide, currentIndex, nextSlide, prevSlide, scrollY } = useContext(MyContext);
@@ -21,28 +21,15 @@ const Carousel = () => {
           variants={parallax(scrollY * 0.3)}
           style={{ backgroundImage: `url(${item.bg})` }}
         >
-
-          {/* ⭐ TEXT CONTENT OVER SLIDE */}
-          {i === currentIndex && (
-            <motion.div 
-              className="carousel-text"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h1 className="carousel-title">{item.title}</h1>
-              <p className="carousel-subtitle">{item.subtitle}</p>
-
-              {item.buttonText && (
-                <button className="carousel-btn-main">
-                  {item.buttonText}
-                </button>
-              )}
-            </motion.div>
-          )}
-
         </motion.div>
       ))}
+
+      {/* ⭐ STATIC TEXT OVERLAY (NOT FROM MAP) */}
+      <div className="carousel-static-text">
+        <h1>Welcome to AllForHome</h1>
+        <p>Your one-stop destination for premium home interiors</p>
+        <button className="carousel-main-btn">Shop Now</button>
+      </div>
 
       <button className="carousel-btn left" onClick={prevSlide}>&#10094;</button>
       <button className="carousel-btn right" onClick={nextSlide}>&#10095;</button>
