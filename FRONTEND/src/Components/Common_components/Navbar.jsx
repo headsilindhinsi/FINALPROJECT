@@ -44,16 +44,7 @@ return (
       >
         <div className="container d-flex align-items-center justify-content-between">
           {/* Brand */}
-          <a href="/" className="navbar-brand fw-bold text-uppercase"
-            style={{
-              color: "#bfa76f",
-              fontSize: "28px",
-              fontFamily: "'Playfair Display', serif",
-              letterSpacing: "1px",
-            }}
-          >
-            All4Home
-          </a>
+          <a href="/" className="navbar-brand fw-bold text-uppercase" style={{   color: "#bfa76f",   fontSize: "28px",   fontFamily: "'Playfair Display', serif",   letterSpacing: "1px", }}>  All4Home</a>
 
           {/* Center Menu (Desktop only) */}
           <div className="collapse navbar-collapse justify-content-center d-none d-lg-flex">
@@ -161,17 +152,8 @@ return (
         fontFamily: "serif",
       }}>
      
-      <div className="offcanvas-header"
-        style={{
-          borderBottom: "1px solid #eee",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "20px 15px",
-        }}>
-        <h5 id="mobileMenuLabel"
-          style={{fontFamily: "serif",color: "#b99c6b",fontWeight: "600",fontSize: "22px",margin: "0",}}>
-          All4HOME
-        </h5>
+      <div className="offcanvas-header" style={{ borderBottom: "1px solid #eee", justifyContent: "space-between", alignItems: "center", padding: "20px 15px",}}>
+        <h5 id="mobileMenuLabel" style={{fontFamily: "serif",color: "#b99c6b",fontWeight: "600",fontSize: "22px",margin: "0",}}> All4HOME</h5>
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style={{ filter: "invert(60%)", opacity: "0.7",}}></button>
       </div>
 
@@ -198,7 +180,7 @@ return (
               </li>
               <li>
                 <Link className="dropdown-item" to="/DiningRoom" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }} >   Dining Room </Link>
-              </li>*+
+              </li>
               <li>
                 <Link className="dropdown-item" to="/Decor" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>
                   Home Decor
