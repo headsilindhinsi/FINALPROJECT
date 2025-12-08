@@ -15,10 +15,6 @@ import BeautifulStory from '../Components/Home_Components/BeautifullStory'
 import AccessoriesSection from '../Components/Home_Components/Carousel'
 
 
-
-
-
-
 const Home = () => {
   return (
     <>
@@ -37,17 +33,7 @@ const Home = () => {
       <Team />
       <Footer />
        
-
-    
-     
-     
-     
-    
-   
-     
-     
-     
-    </>
+ </>
   )
 }
 
