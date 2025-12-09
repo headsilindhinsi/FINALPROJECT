@@ -1433,7 +1433,8 @@ export const ShopHomeProducts = [
   
    {
     img : decor,
-    name : "Home Decoration"
+    name : "Home Decoration",
+    path :"Decor"
   },
 
   
