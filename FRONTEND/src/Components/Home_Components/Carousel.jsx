@@ -25,7 +25,15 @@ const Carousel = () => {
         ></motion.div>
       ))}
 
-     
+      {/* ⭐ Elegant Static Text */}
+      <div className="carousel-static-text elegant-text">
+        <h1 className="text-dark">
+          Welcome to <span>AllForHome</span>
+        </h1>
+        <p className="text-dark">Discover timeless elegance crafted for your dream home</p>
+
+        <button className="carousel-main-btn elegant-btn">Shop Now</button>
+      </div>
 
       {/* Navigation Arrows */}
       <button className="carousel-btn left" onClick={prevSlide}>
