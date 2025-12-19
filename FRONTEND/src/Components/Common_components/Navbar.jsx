@@ -198,7 +198,7 @@ return (
               </li>
               <li>
                 <Link className="dropdown-item" to="/DiningRoom" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }} >   Dining Room </Link>
-              </li>*+
+              </li>
               <li>
                 <Link className="dropdown-item" to="/Decor" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>
                   Home Decor
