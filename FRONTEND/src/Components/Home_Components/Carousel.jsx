@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import { parallax } from "../../motion/Motion";
 
 const Carousel = () => {
-  const { slide, currentIndex, nextSlide, prevSlide, scrollY } = useContext(MyContext);
+  const { slide, currentIndex, nextSlide, prevSlide, scrollY } =
+    useContext(MyContext);
 
   return (
     <section id="home" className="carousel-container">
 
-      {/* Navbar */}
       <Navbar />
 
       {/* Background Slides */}
@@ -22,20 +22,40 @@ const Carousel = () => {
           animate={i === currentIndex ? "visible" : "hidden"}
           variants={parallax(scrollY * 0.3)}
           style={{ backgroundImage: `url(${item.bg})` }}
-        ></motion.div>
+        >
+          {/* Soft Overlay */}
+          <div className="carousel-overlay"></div>
+        </motion.div>
       ))}
 
-      {/* ⭐ Elegant Static Text */}
+      {/* Elegant Text */}
       <div className="carousel-static-text elegant-text">
-        <h1 className="text-dark">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+        >
           Welcome to <span>AllForHome</span>
-        </h1>
-        <p className="text-dark">Discover timeless elegance crafted for your dream home</p>
+        </motion.h1>
 
-        <button className="carousel-main-btn elegant-btn">Shop Now</button>
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1 }}
+        >
+          Discover timeless elegance crafted for your dream home
+        </motion.p>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="carousel-main-btn elegant-btn"
+        >
+          Shop Now
+        </motion.button>
       </div>
 
-      {/* Navigation Arrows */}
+      {/* Navigation */}
       <button className="carousel-btn left" onClick={prevSlide}>
         &#10094;
       </button>
