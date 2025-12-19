@@ -20,7 +20,6 @@ const Navbar = () => {
     filteredData,
   } = useContext(MyContext);
 
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +27,8 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-return (
+
+  return (
     <>
       {/* ---------------- NAVBAR ---------------- */}
       <nav
@@ -44,22 +44,43 @@ return (
       >
         <div className="container d-flex align-items-center justify-content-between">
           {/* Brand */}
-          <a href="/" className="navbar-brand fw-bold text-uppercase" style={{   color: "#bfa76f",   fontSize: "28px",   fontFamily: "'Playfair Display', serif",   letterSpacing: "1px", }}>  All4Home</a>
+          <a
+            href="/"
+            className="navbar-brand fw-bold text-uppercase"
+            style={{
+              color: "#bfa76f",
+              fontSize: "28px",
+              fontFamily: "'Playfair Display', serif",
+              letterSpacing: "1px",
+            }}
+          >
+            All4Home
+          </a>
 
           {/* Center Menu (Desktop only) */}
           <div className="collapse navbar-collapse justify-content-center d-none d-lg-flex">
             <ul className="navbar-nav gap-4 text-uppercase small fw-semibold">
               <li className="nav-item">
-                <Link className="nav-link text-dark custom-nav-link" to="/Home">
+                <Link className="nav-link text-dark custom-nav-link" to="/">
                   Home
                 </Link>
               </li>
 
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle text-dark custom-nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a
+                  className="nav-link dropdown-toggle text-dark custom-nav-link"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   Shop
                 </a>
-                <ul className="dropdown-menu border-0 shadow-sm" aria-labelledby="navbarDropdown">
+                <ul
+                  className="dropdown-menu border-0 shadow-sm"
+                  aria-labelledby="navbarDropdown"
+                >
                   <li>
                     <Link className="dropdown-item" to="/Products">
                       Shop Home
@@ -99,17 +120,28 @@ return (
                   Contact Us
                 </Link>
               </li>
-
             </ul>
           </div>
 
           {/* ---------------- RIGHT SIDE ICONS + HAMBURGER ---------------- */}
           <div className="d-flex align-items-center">
-            {/*  Search */}
-            <i className="bi bi-search-heart ms-3 fs-5 text-dark d-none d-lg-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop" style={{ cursor: "pointer" }}></i>
+            {/* 🔍 Search */}
+            <i
+              className="bi bi-search-heart ms-3 fs-5 text-dark d-none d-lg-block"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasTop"
+              aria-controls="offcanvasTop"
+              style={{ cursor: "pointer" }}
+            ></i>
 
-            {/*  Wishlist */}
-            <i className="bi bi-heart fs-5 text-dark position-relative ms-3 d-none d-lg-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWishlist" aria-controls="offcanvasWishlist" style={{ cursor: "pointer" }}>
+            {/* ❤️ Wishlist */}
+            <i
+              className="bi bi-heart fs-5 text-dark position-relative ms-3 d-none d-lg-block"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasWishlist"
+              aria-controls="offcanvasWishlist"
+              style={{ cursor: "pointer" }}
+            >
               {wishlistItems.length > 0 && (
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-light"
@@ -120,8 +152,14 @@ return (
               )}
             </i>
 
-            {/*  Cart */}
-            <i className="bi bi-cart4 fs-5 text-dark position-relative ms-3 d-none d-lg-block" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" style={{ cursor: "pointer" }}>
+            {/* 🛒 Cart */}
+            <i
+              className="bi bi-cart4 fs-5 text-dark position-relative ms-3 d-none d-lg-block"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
+              style={{ cursor: "pointer" }}
+            >
               {cartItems.length > 0 && (
                 <span
                   className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger text-light"
@@ -132,8 +170,14 @@ return (
               )}
             </i>
 
-            {/*  Hamburger (Mobile only, now right end) */}
-            <button className="navbar-toggler border-0 d-lg-none ms-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+            {/* 🍔 Hamburger (Mobile only, now right end) */}
+            <button
+              className="navbar-toggler border-0 d-lg-none ms-3"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#mobileMenu"
+              aria-controls="mobileMenu"
+            >
               <span className="bi bi-list fs-2" style={{ color: "#bfa76f" }}></span>
             </button>
           </div>
@@ -141,64 +185,126 @@ return (
       </nav>
 
       {/* ---------------- MOBILE MENU (OFFCANVAS) ---------------- */}
-      
+      <div
+        className="offcanvas offcanvas-start"
+        tabIndex="-1"
+        id="mobileMenu"
+        aria-labelledby="mobileMenuLabel"
+      >
+        <div className="offcanvas-header d-flex justify-content-between align-items-center">
+          <a
+            href="/"
+            className="navbar-brand fw-bold text-uppercase mb-0"
+            style={{
+              color: "#bfa76f",
+              fontSize: "24px",
+              fontFamily: "'Playfair Display', serif",
+            }}
+          >
+            All4Home
+          </a>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
 
-      {/* Offcanvas Sidebar */}
-     <div className="offcanvas offcanvas-start" tabIndex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel"
-      style={{
-        width: "280px",
-        backgroundColor: "#fff",
-        borderRight: "1px solid #e5e5e5",
-        fontFamily: "serif",
-      }}>
-     
-      <div className="offcanvas-header" style={{ borderBottom: "1px solid #eee", justifyContent: "space-between", alignItems: "center", padding: "20px 15px",}}>
-        <h5 id="mobileMenuLabel" style={{fontFamily: "serif",color: "#b99c6b",fontWeight: "600",fontSize: "22px",margin: "0",}}> All4HOME</h5>
-        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" style={{ filter: "invert(60%)", opacity: "0.7",}}></button>
-      </div>
-
-     
-      <div className="offcanvas-body" style={{   padding: "20px 25px", }}>
-        <ul className="navbar-nav" style={{   listStyle: "none",   paddingLeft: "0",   margin: "0", }}>
-          <li style={{   borderBottom: "1px solid #f2f2f2",   padding: "10px 0", }}>
-            <Link to="/Home" style={{   textDecoration: "none",   color: "#000",   fontSize: "16px",   letterSpacing: "0.5px",   display: "block", }}>Home </Link>
-          </li>
-
-          <li className="nav-item dropdown" style={{   borderBottom: "1px solid #f2f2f2",   padding: "10px 0", }}>
-            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{   color: "#000",   textDecoration: "none",   fontSize: "16px",   display: "block",   letterSpacing: "0.5px", }}>  Shop</a>
-            <ul className="dropdown-menu" style={{   border: "none",   boxShadow: "none",   backgroundColor: "#fff",   marginTop: "5px",   marginLeft: "10px", }}>
-              <li>
-                <Link className="dropdown-item" to="/Products" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>  Shop Home</Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/LivingRoom" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>
-                  Living Room
+        <div className="offcanvas-body">
+          <div className="accordion accordion-flush" id="accordionMenu">
+            {/* Home */}
+            <div className="accordion-item border-0">
+              <h2 className="accordion-header">
+                <Link
+                  to="/"
+                  className="accordion-button collapsed text-dark text-decoration-none bg-transparent shadow-none"
+                  data-bs-dismiss="offcanvas"
+                >
+                  Home
                 </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/BedRoom" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>  Bedroom</Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/DiningRoom" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }} >   Dining Room </Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/Decor" style={{   color: "#555",   textDecoration: "none",   fontSize: "15px",   padding: "5px 0", }}>
-                  Home Decor
+              </h2>
+            </div>
+
+            {/* Shop */}
+            <div className="accordion-item border-0">
+              <h2 className="accordion-header">
+                <button
+                  className="accordion-button collapsed text-dark bg-transparent text-decoration-none shadow-none"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#shopMenu"
+                  aria-expanded="false"
+                  aria-controls="shopMenu"
+                >
+                  Shop
+                </button>
+              </h2>
+              <div
+                id="shopMenu"
+                className="accordion-collapse collapse"
+                data-bs-parent="#accordionMenu"
+              >
+                <div className="accordion-body ps-4">
+                  <ul className="list-unstyled">
+                    <li>
+                      <Link to="/Products" className="text-dark text-decoration-none" data-bs-dismiss="offcanvas">
+                        Shop Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/LivingRoom" className="text-dark text-decoration-none" data-bs-dismiss="offcanvas">
+                        Living Room
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/BedRoom" className="text-dark text-decoration-none" data-bs-dismiss="offcanvas">
+                        Bedroom
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/DiningRoom" className="text-dark text-decoration-none" data-bs-dismiss="offcanvas">
+                        Dining Room
+                      </Link>
+                    </li>
+                    <li>
+                      <Link to="/Decor" className="text-dark text-decoration-none" data-bs-dismiss="offcanvas">
+                        Home Decor
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* About */}
+            <div className="accordion-item border-0">
+              <h2 className="accordion-header">
+                <Link
+                  to="/About-Us"
+                  className="accordion-button collapsed text-dark bg-transparent text-decoration-none shadow-none"
+                  data-bs-dismiss="offcanvas"
+                >
+                  About Us
                 </Link>
-              </li>
-            </ul>
-          </li>
+              </h2>
+            </div>
 
-          <li style={{   borderBottom: "1px solid #f2f2f2",   padding: "10px 0", }}>
-            <Link to="/About-Us" style={{   textDecoration: "none",   color: "#000",   fontSize: "16px",   display: "block", }}>  About Us</Link>
-          </li>
-
-          <li style={{   borderBottom: "1px solid #f2f2f2",   padding: "10px 0", }}>
-            <Link to="/Contact-Us" style={{   textDecoration: "none",   color: "#000",   fontSize: "16px",   display: "block", }}>  Contact Us</Link>
-          </li>
-        </ul>
+            {/* Contact */}
+            <div className="accordion-item border-0">
+              <h2 className="accordion-header">
+                <Link
+                  to="/Contact-Us"
+                  className="accordion-button collapsed text-dark text-decoration-none bg-transparent shadow-none"
+                  data-bs-dismiss="offcanvas"
+                >
+                  Contact Us
+                </Link>
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
 
       {/* ---------------- STYLES ---------------- */}
       <style>{`
@@ -233,38 +339,40 @@ return (
    
      {/* ---------------- SEARCH OFFCANVAS (PREMIUM FULLSCREEN) ---------------- */}
 <div
-  className="offcanvas offcanvas-top"
+  className="offcanvas offcanvas-top premium-search"
   tabIndex="-1"
   id="offcanvasTop"
+  aria-labelledby="offcanvasTopLabel"
   data-bs-scroll="true"
 >
-  <div className="offcanvas-body">
+  <div className="premium-search-container">
 
+    {/* Close button */}
     <button
+      type="button"
       className="premium-close-btn"
       data-bs-dismiss="offcanvas"
+      aria-label="Close"
     >
       ✕
     </button>
 
-    <div className="premium-search-container">
+    {/* Heading */}
+    <h1 className="premium-search-title">Search</h1>
 
-      <h1 className="premium-search-title">Search</h1>
+    {/* Search Input */}
+    <input
+      className="premium-search-input"
+      placeholder="Search products, rooms, décor..."
+      onChange={(e) => {
+        setInput(e.target.value);
+        SearchFun(e.target.value);
+      }}
+    />
 
-      <input
-        className="premium-search-input"
-        placeholder="Search products, rooms, décor..."
-        onChange={(e) => {
-          setInput(e.target.value);
-          SearchFun(e.target.value);
-        }}
-      />
-
-    </div>
-
-    {/* FULL-WIDTH RESULTS (fixed) */}
-    <div className="premium-search-results">
-      <div className="row gx-4 gy-4">
+    {/* Results */}
+    <div className="container mt-5">
+      <div className="row">
 
         {filteredData.length === 0 ? (
           <div className="col-12 text-center mt-5">
@@ -273,17 +381,13 @@ return (
         ) : (
           filteredData.map((value, index) => (
             <div
-              className="col-lg-3 col-md-6 col-12"
+              className="col-lg-3 col-md-6 col-12 my-3"
               key={index}
               onClick={() => navigate(`/Dynamic/${value.id}`)}
               style={{ cursor: "pointer" }}
             >
               <div className="premium-result-card">
-                <img
-                  src={value.img}
-                  alt={value.Name}
-                  className="premium-result-img"
-                />
+                <img src={value.img} alt={value.Name} className="premium-result-img" />
                 <div className="premium-result-content">
                   <p className="premium-result-type">{value.type}</p>
                   <h5 className="premium-result-name">{value.Name}</h5>
@@ -296,20 +400,28 @@ return (
 
       </div>
     </div>
-
   </div>
 </div>
 
 
-
-
-
-
       {/* ---------------- WISHLIST OFFCANVAS ---------------- */}
-      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasWishlist" aria-labelledby="offcanvasWishlistLabel" data-bs-scroll="true">
+      <div
+        className="offcanvas offcanvas-end"
+        tabIndex="-1"
+        id="offcanvasWishlist"
+        aria-labelledby="offcanvasWishlistLabel"
+        data-bs-scroll="true"
+      >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasWishlistLabel"> Wishlist</h5>
-          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 className="offcanvas-title" id="offcanvasWishlistLabel">
+            ❤ Wishlist
+          </h5>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
 
         <div className="offcanvas-body">
@@ -325,21 +437,42 @@ return (
                   className="d-flex align-items-center justify-content-between border-bottom py-2"
                 >
                   <div className="d-flex align-items-center gap-3">
-                    <img src={item.img} alt={item.Name} width="60" height="60" className="rounded"/>
+                    <img
+                      src={item.img}
+                      alt={item.Name}
+                      width="60"
+                      height="60"
+                      className="rounded"
+                    />
                     <div>
                       <p className="mb-0 fw-semibold">{item.Name}</p>
                       <small className="text-muted">₹{item.price}</small>
                     </div>
                   </div>
                   <div className="d-flex align-items-center gap-2">
-                    <i className="bi bi-cart-plus text-success" role="button" title="Add to Cart" onClick={() => addToCart(item)}></i>
-                    <i className="bi bi-trash text-danger" role="button" title="Remove" onClick={() => removeFromWishlist(item.id)}></i>
+                    <i
+                      className="bi bi-cart-plus text-success"
+                      role="button"
+                      title="Add to Cart"
+                      onClick={() => addToCart(item)}
+                    ></i>
+                    <i
+                      className="bi bi-trash text-danger"
+                      role="button"
+                      title="Remove"
+                      onClick={() => removeFromWishlist(item.id)}
+                    ></i>
                   </div>
                 </div>
               ))}
 
               <div className="mt-4 border-top pt-3">
-                <button className="btn btn-outline-danger w-100" onClick={clearWishlist}>  Clear Wishlist</button>
+                <button
+                  className="btn btn-outline-danger w-100"
+                  onClick={clearWishlist}
+                >
+                  Clear Wishlist
+                </button>
               </div>
             </>
           )}
@@ -347,12 +480,23 @@ return (
       </div>
 
       {/* ---------------- CART OFFCANVAS ---------------- */}
-      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-scroll="true">
+      <div
+        className="offcanvas offcanvas-end"
+        tabIndex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+        data-bs-scroll="true"
+      >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title" id="offcanvasRightLabel">
             🛒 Your Cart
           </h5>
-          <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button
+            type="button"
+            className="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
         </div>
 
         <div className="offcanvas-body">
@@ -368,7 +512,13 @@ return (
                   className="d-flex align-items-center justify-content-between border-bottom py-2"
                 >
                   <div className="d-flex align-items-center gap-3">
-                    <img src={item.img} alt={item.Name} width="60" height="60" className="rounded"/>
+                    <img
+                      src={item.img}
+                      alt={item.Name}
+                      width="60"
+                      height="60"
+                      className="rounded"
+                    />
                     <div>
                       <p className="mb-0 fw-semibold">{item.Name}</p>
                       <small className="text-muted">
@@ -376,17 +526,23 @@ return (
                       </small>
                     </div>
                   </div>
-                  <i className="bi bi-trash text-danger" role="button" onClick={() => removeFromCart(item.id)}></i>
+                  <i
+                    className="bi bi-trash text-danger"
+                    role="button"
+                    onClick={() => removeFromCart(item.id)}
+                  ></i>
                 </div>
               ))}
 
               <div className="mt-4 border-top pt-3">
                 <h6 className="fw-bold">Total: ₹{getCartTotal().toFixed(2)}</h6>
                 <button className="btn btn-dark w-100 mt-3">Checkout</button>
-                <button className="btn btn-outline-danger w-100 mt-2" onClick={clearCart}
->
-  Clear Cart
-</button>
+                <button
+                  className="btn btn-outline-danger w-100 mt-2"
+                  onClick={clearCart}
+                >
+                  Clear Cart
+                </button>
               </div>
             </>
         )}
@@ -395,6 +551,6 @@ return (
     </>
 
   );
-};     
+};
 
-  
+export default Navbar;
