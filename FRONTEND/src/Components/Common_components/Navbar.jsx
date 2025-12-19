@@ -250,22 +250,39 @@ return (
       `}</style>
    
      {/* ---------------- SEARCH OFFCANVAS (PREMIUM FULLSCREEN) ---------------- */}
-<div className="offcanvas offcanvas-top premium-search" tabIndex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel" data-bs-scroll="true">
-  <div className="premium-search-container">
+<div
+  className="offcanvas offcanvas-top"
+  tabIndex="-1"
+  id="offcanvasTop"
+  data-bs-scroll="true"
+>
+  <div className="offcanvas-body">
 
-   
-    <button type="button" className="premium-close-btn" data-bs-dismiss="offcanvas" aria-label="Close">✕</button>
+    <button
+      className="premium-close-btn"
+      data-bs-dismiss="offcanvas"
+    >
+      ✕
+    </button>
 
-    
-    <h1 className="premium-search-title">Search</h1>
+    <div className="premium-search-container">
 
-  
-    <input className="premium-search-input" placeholder="Search products, rooms, décor..." onChange={(e) => {   setInput(e.target.value);   SearchFun(e.target.value); }}
-    />
+      <h1 className="premium-search-title">Search</h1>
 
-    {/* Results */}
-    <div className="container mt-5">
-      <div className="row">
+      <input
+        className="premium-search-input"
+        placeholder="Search products, rooms, décor..."
+        onChange={(e) => {
+          setInput(e.target.value);
+          SearchFun(e.target.value);
+        }}
+      />
+
+    </div>
+
+    {/* FULL-WIDTH RESULTS (fixed) */}
+    <div className="premium-search-results">
+      <div className="row gx-4 gy-4">
 
         {filteredData.length === 0 ? (
           <div className="col-12 text-center mt-5">
@@ -274,13 +291,17 @@ return (
         ) : (
           filteredData.map((value, index) => (
             <div
-              className="col-lg-3 col-md-6 col-12 my-3"
+              className="col-lg-3 col-md-6 col-12"
               key={index}
               onClick={() => navigate(`/Dynamic/${value.id}`)}
               style={{ cursor: "pointer" }}
             >
               <div className="premium-result-card">
-                <img src={value.img} alt={value.Name} className="premium-result-img" />
+                <img
+                  src={value.img}
+                  alt={value.Name}
+                  className="premium-result-img"
+                />
                 <div className="premium-result-content">
                   <p className="premium-result-type">{value.type}</p>
                   <h5 className="premium-result-name">{value.Name}</h5>
@@ -293,8 +314,10 @@ return (
 
       </div>
     </div>
+
   </div>
 </div>
+
 
 
       {/* ---------------- WISHLIST OFFCANVAS ---------------- */}
