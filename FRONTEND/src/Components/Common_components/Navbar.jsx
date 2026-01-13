@@ -250,73 +250,68 @@ return (
       `}</style>
    
      {/* ---------------- SEARCH OFFCANVAS (PREMIUM FULLSCREEN) ---------------- */}
-<div
-  className="offcanvas offcanvas-top"
-  tabIndex="-1"
-  id="offcanvasTop"
-  data-bs-scroll="true"
->
-  <div className="offcanvas-body">
+              <div className="offcanvas offcanvas-top" tabIndex="-1" id="offcanvasTop" data-bs-scroll="true">
+                <div className="offcanvas-body">
 
-    <button
-      className="premium-close-btn"
-      data-bs-dismiss="offcanvas"
-    >
-      ✕
-    </button>
+                  <button
+                    className="premium-close-btn"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    ✕
+                  </button>
 
-    <div className="premium-search-container">
+                  <div className="premium-search-container">
 
-      <h1 className="premium-search-title">Search</h1>
+                    <h1 className="premium-search-title">Search</h1>
 
-      <input
-        className="premium-search-input"
-        placeholder="Search products, rooms, décor..."
-        onChange={(e) => {
-          setInput(e.target.value);
-          SearchFun(e.target.value);
-        }}
-      />
+                    <input
+                      className="premium-search-input"
+                      placeholder="Search products, rooms, décor..."
+                      onChange={(e) => {
+                        setInput(e.target.value);
+                        SearchFun(e.target.value);
+                      }}
+                    />
 
-    </div>
+                  </div>
 
-    {/* FULL-WIDTH RESULTS (fixed) */}
-    <div className="premium-search-results">
-      <div className="row gx-4 gy-4">
+                  {/* FULL-WIDTH RESULTS (fixed) */}
+                  <div className="premium-search-results">
+                    <div className="row gx-4 gy-4">
 
-        {filteredData.length === 0 ? (
-          <div className="col-12 text-center mt-5">
-            <p className="text-muted">No matching results found.</p>
-          </div>
-        ) : (
-          filteredData.map((value, index) => (
-            <div
-              className="col-lg-3 col-md-6 col-12"
-              key={index}
-              onClick={() => navigate(`/Dynamic/${value.id}`)}
-              style={{ cursor: "pointer" }}
-            >
-              <div className="premium-result-card">
-                <img
-                  src={value.img}
-                  alt={value.Name}
-                  className="premium-result-img"
-                />
-                <div className="premium-result-content">
-                  <p className="premium-result-type">{value.type}</p>
-                  <h5 className="premium-result-name">{value.Name}</h5>
-                  <p className="premium-result-price">₹{value.price}</p>
+                      {filteredData.length === 0 ? (
+                        <div className="col-12 text-center mt-5">
+                          <p className="text-muted">No matching results found.</p>
+                        </div>
+                      ) : (
+                        filteredData.map((value, index) => (
+                          <div
+                            className="col-lg-3 col-md-6 col-12"
+                            key={index}
+                            onClick={() => navigate(`/Dynamic/${value.id}`)}
+                            style={{ cursor: "pointer" }}
+                          >
+                            <div className="premium-result-card">
+                              <img
+                                src={value.img}
+                                alt={value.Name}
+                                className="premium-result-img"
+                              />
+                              <div className="premium-result-content">
+                                <p className="premium-result-type">{value.type}</p>
+                                <h5 className="premium-result-name">{value.Name}</h5>
+                                <p className="premium-result-price">₹{value.price}</p>
+                              </div>
+                            </div>
+                          </div>
+                        ))
+                      )}
+
+                    </div>
+                  </div>
+
                 </div>
               </div>
-            </div>
-          ))
-        )}
-
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
 
@@ -398,10 +393,7 @@ return (
               <div className="mt-4 border-top pt-3">
                 <h6 className="fw-bold">Total: ₹{getCartTotal().toFixed(2)}</h6>
                 <button className="btn btn-dark w-100 mt-3">Checkout</button>
-                <button className="btn btn-outline-danger w-100 mt-2" onClick={clearCart}
->
-  Clear Cart
-</button>
+                <button className="btn btn-outline-danger w-100 mt-2" onClick={clearCart}> Clear Cart</button>
               </div>
             </>
         )}
