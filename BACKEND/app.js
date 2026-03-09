@@ -1,23 +1,24 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
+const express = require("express");
+const cors = require("cors");
+
 const connectDB = require("./config/db");
 
-connectDB()
+const app = express();
 
-const dotenv = require("dotenv")
-dotenv.config()
+connectDB();
 
-const express = require("express")
-const app = express()
+app.use(cors());
+app.use(express.json({ limit: "50mb" }));
 
-const cors = require("cors")
-app.use(cors())
+const productRouter = require("./router/productRouter");
+const userRouter = require("./router/UserRouter");
 
-app.use(express.json({ limit : "50mb"}))
+app.use("/product", productRouter);
+app.use("/user", userRouter);
 
-const productRouter = require("./router/productRouter")
-const UserRouter =  require("./router/UserRouter")
-app.use("/product" , productRouter)
-app.use("/user" , UserRouter)
-
-app.listen(process.env.PORT , () => {
-    console.log("server running")
-})
+app.listen(process.env.PORT, () => {
+  console.log("server running on port " + process.env.PORT);
+});
